@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["user_id"])) {
-    header('Location: home.php');
+    header('Location: index.php');
     exit();
 }
 ?>
@@ -88,7 +88,7 @@ if (isset($_SESSION["user_id"])) {
             }
 
             $.ajax({
-                url: 'checkregister.php',
+                url: 'backend/checkregister.php',
                 method: 'POST',
                 data: {
                     name: name,
@@ -103,7 +103,7 @@ if (isset($_SESSION["user_id"])) {
                         text: "You can now log in.",
                     });
                     setTimeout(function () {
-                        window.location.href = 'home.php';
+                        window.location.href = 'index.php';
                     }, 1500);
                 },
                 error: function () {

@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["user_id"])) {
-    header('Location: home.php');
+    header('Location: index.php');
     exit();
 }
 ?>
@@ -72,7 +72,7 @@ if (isset($_SESSION["user_id"])) {
             const password = document.getElementById('password').value;
 
             $.ajax({
-                url: 'checklogin.php',
+                url: 'backend/checklogin.php',
                 method: 'POST',
                 data: {
                     email: email,
